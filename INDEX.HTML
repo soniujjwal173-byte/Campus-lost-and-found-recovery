@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Lost &amp; Found Recovery Portal</title>
+  <link rel="stylesheet" href="STYLE.CSS">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#dashboard">Campus Lost &amp; Found</a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#dashboard">Dashboard</a>
+        <a href="#items">Browse Items</a>
+        <a href="#report">Report Item</a>
+        <a href="#update">Update Status</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section id="dashboard" class="section">
+      <h1>Campus Lost &amp; Found Recovery Portal</h1>
+      <p class="lead">Report lost or found belongings, follow the recovery progress and see how many items have been returned to their owners.</p>
+
+      
+      <div class="stats">
+        <div class="stat"><span class="num">8</span><span class="label">Total Reports</span></div>
+        <div class="stat stat-lost"><span class="num">4</span><span class="label">Lost Items</span></div>
+        <div class="stat stat-found"><span class="num">4</span><span class="label">Found Items</span></div>
+        <div class="stat stat-pending"><span class="num">6</span><span class="label">Pending Recovery</span></div>
+        <div class="stat stat-returned"><span class="num">2</span><span class="label">Returned</span></div>
+      </div>
+
+      <div class="panels">
+        
+        <div class="card">
+          <h2 class="card-title">Reports by Category</h2>
+          <ul class="bars">
+            <li><span class="bar-label">Electronics</span><span class="bar"><span style="--w:100%"></span></span><span class="bar-count">2</span></li>
+            <li><span class="bar-label">Bags &amp; Accessories</span><span class="bar"><span style="--w:100%"></span></span><span class="bar-count">2</span></li>
+            <li><span class="bar-label">Documents &amp; ID</span><span class="bar"><span style="--w:50%"></span></span><span class="bar-count">1</span></li>
+            <li><span class="bar-label">Books</span><span class="bar"><span style="--w:50%"></span></span><span class="bar-count">1</span></li>
+            <li><span class="bar-label">Clothing</span><span class="bar"><span style="--w:50%"></span></span><span class="bar-count">1</span></li>
+            <li><span class="bar-label">Keys &amp; Others</span><span class="bar"><span style="--w:50%"></span></span><span class="bar-count">1</span></li>
+          </ul>
+        </div>
+
+       
+        <div class="card">
+          <h2 class="card-title">Status Overview</h2>
+          <ul class="bars">
+            <li><span class="bar-label">Reported</span><span class="bar"><span style="--w:25%"></span></span><span class="bar-count">2</span></li>
+            <li><span class="bar-label">Under Review</span><span class="bar"><span style="--w:25%"></span></span><span class="bar-count">2</span></li>
+            <li><span class="bar-label">Matched</span><span class="bar"><span style="--w:12.5%"></span></span><span class="bar-count">1</span></li>
+            <li><span class="bar-label">Returned</span><span class="bar bar-green"><span style="--w:25%"></span></span><span class="bar-count">2</span></li>
+          </ul>
+          <p class="recovery">Recovery rate: <strong>25%</strong> (2 of 8 items returned)</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title">How It Works</h2>
+        <ol class="workflow">
+          <li><strong>Report</strong><span>Submit the details of a lost or found item.</span></li>
+          <li><strong>Under Review</strong><span>The campus office checks the report.</span></li>
+          <li><strong>Matched</strong><span>A lost report is matched with a found item.</span></li>
+          <li><strong>Returned</strong><span>The owner collects the item and the case is closed.</span></li>
+        </ol>
+      </div>
+    </section>
+
+  
+    <section id="items" class="section items">
+      <h2>Browse Items</h2>
+
+     
+      <div class="search">
+        <label for="search" class="sr-only">Search items</label>
+        <input id="search" class="control" type="search" placeholder="Search by item name, location or ID">
+      </div>
+
+      
+      <div class="filters">
+        <div class="filter-group">
+          <span class="filter-title">Category</span>
+          <label class="chip"><input type="radio" name="f-cat" id="cat-all" checked><span>All</span></label>
+          <label class="chip"><input type="radio" name="f-cat" id="cat-electronics"><span>Electronics</span></label>
+          <label class="chip"><input type="radio" name="f-cat" id="cat-documents"><span>Documents &amp; ID</span></label>
+          <label class="chip"><input type="radio" name="f-cat" id="cat-books"><span>Books</span></label>
+          <label class="chip"><input type="radio" name="f-cat" id="cat-bags"><span>Bags &amp; Accessories</span></label>
+          <label class="chip"><input type="radio" name="f-cat" id="cat-clothing"><span>Clothing</span></label>
+          <label class="chip"><input type="radio" name="f-cat" id="cat-others"><span>Keys &amp; Others</span></label>
+        </div>
+
+        <div class="filter-group">
+          <span class="filter-title">Type</span>
+          <label class="chip"><input type="radio" name="f-type" id="type-all" checked><span>All</span></label>
+          <label class="chip"><input type="radio" name="f-type" id="type-lost"><span>Lost</span></label>
+          <label class="chip"><input type="radio" name="f-type" id="type-found"><span>Found</span></label>
+        </div>
+
+        <div class="filter-group">
+          <span class="filter-title">Status</span>
+          <label class="chip"><input type="radio" name="f-status" id="st-all" checked><span>All</span></label>
+          <label class="chip"><input type="radio" name="f-status" id="st-reported"><span>Reported</span></label>
+          <label class="chip"><input type="radio" name="f-status" id="st-review"><span>Under Review</span></label>
+          <label class="chip"><input type="radio" name="f-status" id="st-matched"><span>Matched</span></label>
+          <label class="chip"><input type="radio" name="f-status" id="st-returned"><span>Returned</span></label>
+        </div>
+      </div>
+
+      
+      <div class="grid">
+
+        <article class="item" data-type="lost" data-cat="bags" data-status="review">
+          <div class="item-top"><span class="item-id">LF-1001</span><span class="tag tag-lost">Lost</span></div>
+          <h3>Blue Laptop Backpack</h3>
+          <ul class="meta">
+            <li><b>Category:</b> Bags &amp; Accessories</li>
+            <li><b>Location:</b> Library</li>
+            <li><b>Date:</b> 02 Oct 2026</li>
+          </ul>
+          <p class="desc">Navy blue backpack with a laptop inside and a small panda keychain.</p>
+          <span class="badge badge-review">Under Review</span>
+          <ol class="steps" aria-label="Recovery progress">
+            <li class="done">Reported</li><li class="done current">Review</li><li>Matched</li><li>Returned</li>
+          </ol>
+        </article>
+
+        <article class="item" data-type="found" data-cat="documents" data-status="matched">
+          <div class="item-top"><span class="item-id">LF-1002</span><span class="tag tag-found">Found</span></div>
+          <h3>Student ID Card</h3>
+          <ul class="meta">
+            <li><b>Category:</b> Documents &amp; ID</li>
+            <li><b>Location:</b> Main Gate</li>
+            <li><b>Date:</b> 03 Oct 2026</li>
+          </ul>
+          <p class="desc">College ID card of a second-year B.Tech student, found near the security desk.</p>
+          <span class="badge badge-matched">Matched</span>
+          <ol class="steps" aria-label="Recovery progress">
+            <li class="done">Reported</li><li class="done">Review</li><li class="done current">Matched</li><li>Returned</li>
+          </ol>
+        </article>
+
+        <article class="item" data-type="lost" data-cat="electronics" data-status="reported">
+          <div class="item-top"><span class="item-id">LF-1003</span><span class="tag tag-lost">Lost</span></div>
+          <h3>Wireless Earbuds</h3>
+          <ul class="meta">
+            <li><b>Category:</b> Electronics</li>
+            <li><b>Location:</b> Cafeteria</li>
+            <li><b>Date:</b> 04 Oct 2026</li>
+          </ul>
+          <p class="desc">White earbuds in a black charging case with a scratch on the lid.</p>
+          <span class="badge badge-reported">Reported</span>
+          <ol class="steps" aria-label="Recovery progress">
+            <li class="done current">Reported</li><li>Review</li><li>Matched</li><li>Returned</li>
+          </ol>
+        </article>
+
+        <article class="item" data-type="found" data-cat="electronics" data-status="returned">
+          <div class="item-top"><span class="item-id">LF-1004</span><span class="tag tag-found">Found</span></div>
+          <h3>Scientific Calculator</h3>
+          <ul class="meta">
+            <li><b>Category:</b> Electronics</li>
+            <li><b>Location:</b> Block B, Exam Hall</li>
+            <li><b>Date:</b> 05 Oct 2026</li>
+          </ul>
+          <p class="desc">Black scientific calculator left on a desk after the internal exam.</p>
+          <span class="badge badge-returned">Returned</span>
+          <ol class="steps" aria-label="Recovery progress">
+            <li class="done">Reported</li><li class="done">Review</li><li class="done">Matched</li><li class="done current">Returned</li>
+          </ol>
+        </article>
+
+        <article class="item" data-type="found" data-cat="others" data-status="review">
+          <div class="item-top"><span class="item-id">LF-1005</span><span class="tag tag-found">Found</span></div>
+          <h3>Bunch of Keys</h3>
+          <ul class="meta">
+            <li><b>Category:</b> Keys &amp; Others</li>
+            <li><b>Location:</b> Parking Area</li>
+            <li><b>Date:</b> 06 Oct 2026</li>
+          </ul>
+          <p class="desc">Three keys on a ring with a red tag, found near the two-wheeler parking.</p>
+          <span class="badge badge-review">Under Review</span>
+          <ol class="steps" aria-label="Recovery progress">
+            <li class="done">Reported</li><li class="done current">Review</li><li>Matched</li><li>Returned</li>
+          </ol>
+        </article>
+
+        <article class="item" data-type="lost" data-cat="books" data-status="reported">
+          <div class="item-top"><span class="item-id">LF-1006</span><span class="tag tag-lost">Lost</span></div>
+          <h3>Data Structures Textbook</h3>
+          <ul class="meta">
+            <li><b>Category:</b> Books</li>
+            <li><b>Location:</b> Block C, Room 204</li>
+            <li><b>Date:</b> 07 Oct 2026</li>
+          </ul>
+          <p class="desc">Green hardcover textbook with the owner's name written on the first page.</p>
+          <span class="badge badge-reported">Reported</span>
+          <ol class="steps" aria-label="Recovery progress">
+            <li class="done current">Reported</li><li>Review</li><li>Matched</li><li>Returned</li>
+          </ol>
+        </article>
+
+        <article class="item" data-type="found" data-cat="clothing" data-status="returned">
+          <div class="item-top"><span class="item-id">LF-1007</span><span class="tag tag-found">Found</span></div>
+          <h3>Grey Hoodie</h3>
+          <ul class="meta">
+            <li><b>Category:</b> Clothing</li>
+            <li><b>Location:</b> Sports Ground</li>
+            <li><b>Date:</b> 08 Oct 2026</li>
+          </ul>
+          <p class="desc">Grey zip-up hoodie, size M, left on the bleachers after practice.</p>
+          <span class="badge badge-returned">Returned</span>
+          <ol class="steps" aria-label="Recovery progress">
+            <li class="done">Reported</li><li class="done">Review</li><li class="done">Matched</li><li class="done current">Returned</li>
+          </ol>
+        </article>
+
+        <article class="item" data-type="lost" data-cat="bags" data-status="reported">
+          <div class="item-top"><span class="item-id">LF-1008</span><span class="tag tag-lost">Lost</span></div>
+          <h3>Silver Wrist Watch</h3>
+          <ul class="meta">
+            <li><b>Category:</b> Bags &amp; Accessories</li>
+            <li><b>Location:</b> Gym</li>
+            <li><b>Date:</b> 09 Oct 2026</li>
+          </ul>
+          <p class="desc">Silver analog watch with a metal strap and a cracked corner on the dial.</p>
+          <span class="badge badge-reported">Reported</span>
+          <ol class="steps" aria-label="Recovery progress">
+            <li class="done current">Reported</li><li>Review</li><li>Matched</li><li>Returned</li>
+          </ol>
+        </article>
+
+      </div>
+
+      <p class="result-count" aria-live="polite"></p>
+    </section>
+
+    <section id="report" class="section">
+      <h2>Report a Lost / Found Item</h2>
+      <p class="lead">Fields marked <span class="req">*</span> are required.</p>
+
+      <div id="report-success" class="alert alert-success" role="status">
+        <strong>Report submitted successfully!</strong> The campus office will review it and the status will be updated soon.
+      </div>
+
+      <form class="form card" action="#report-success" method="get">
+        <div class="form-grid">
+
+          <fieldset class="field full">
+            <legend>Report type <span class="req">*</span></legend>
+            <div class="chip-row">
+              <label class="chip"><input type="radio" name="report_type" value="lost" required><span>I lost an item</span></label>
+              <label class="chip"><input type="radio" name="report_type" value="found"><span>I found an item</span></label>
+            </div>
+            <small class="error">Please choose whether the item was lost or found.</small>
+          </fieldset>
+
+          <div class="field">
+            <label for="item-name">Item name <span class="req">*</span></label>
+            <input class="control" id="item-name" name="item_name" type="text" minlength="3" maxlength="60" required placeholder="e.g. Black wallet">
+            <small class="hint">3 to 60 characters.</small>
+            <small class="error">Please enter the item name (at least 3 characters).</small>
+          </div>
+
+          <div class="field">
+            <label for="category">Category <span class="req">*</span></label>
+            <select class="control" id="category" name="category" required>
+              <option value="">Select a category</option>
+              <option>Electronics</option>
+              <option>Documents &amp; ID</option>
+              <option>Books</option>
+              <option>Bags &amp; Accessories</option>
+              <option>Clothing</option>
+              <option>Keys &amp; Others</option>
+            </select>
+            <small class="error">Please select a category.</small>
+          </div>
+
+          <div class="field full">
+            <label for="description">Description <span class="req">*</span></label>
+            <textarea class="control" id="description" name="description" rows="4" minlength="20" maxlength="300" required placeholder="Colour, brand, size, marks or anything that helps identify the item"></textarea>
+            <small class="hint">20 to 300 characters.</small>
+            <small class="error">Please describe the item in at least 20 characters.</small>
+          </div>
+
+          <div class="field">
+            <label for="date">Date lost / found <span class="req">*</span></label>
+            <input class="control" id="date" name="date" type="date" required>
+            <small class="error">Please select the date.</small>
+          </div>
+
+          <div class="field">
+            <label for="location">Location <span class="req">*</span></label>
+            <select class="control" id="location" name="location" required>
+              <option value="">Select a location</option>
+              <option>Main Gate</option>
+              <option>Library</option>
+              <option>Cafeteria</option>
+              <option>Block A</option>
+              <option>Block B</option>
+              <option>Block C</option>
+              <option>Hostel</option>
+              <option>Sports Ground</option>
+              <option>Parking Area</option>
+              <option>Other</option>
+            </select>
+            <small class="error">Please select a location.</small>
+          </div>
+
+          <div class="field">
+            <label for="full-name">Your full name <span class="req">*</span></label>
+            <input class="control" id="full-name" name="full_name" type="text" pattern="[A-Za-z ]{3,50}" title="Use 3 to 50 letters and spaces only" required placeholder="e.g. Riya Sharma">
+            <small class="hint">Letters and spaces only.</small>
+            <small class="error">Enter a valid name (3 to 50 letters, no numbers).</small>
+          </div>
+
+          <div class="field">
+            <label for="college-id">Student / Staff ID <span class="req">*</span></label>
+            <input class="control" id="college-id" name="college_id" type="text" pattern="[A-Za-z0-9\-]{5,15}" title="Use 5 to 15 letters, numbers or hyphens" required placeholder="e.g. 2301234">
+            <small class="hint">5 to 15 letters or numbers.</small>
+            <small class="error">Enter a valid ID (5 to 15 letters or numbers).</small>
+          </div>
+
+          <div class="field">
+            <label for="email">Email <span class="req">*</span></label>
+            <input class="control" id="email" name="email" type="email" required placeholder="name@college.edu">
+            <small class="error">Please enter a valid email address.</small>
+          </div>
+
+          <div class="field">
+            <label for="phone">Mobile number <span class="req">*</span></label>
+            <input class="control" id="phone" name="phone" type="tel" pattern="[6-9][0-9]{9}" title="Enter a 10-digit mobile number starting with 6, 7, 8 or 9" required placeholder="10-digit number">
+            <small class="hint">10 digits, starting with 6 to 9.</small>
+            <small class="error">Enter a valid 10-digit mobile number.</small>
+          </div>
+
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn">Submit Report</button>
+          <button type="reset" class="btn btn-secondary">Clear Form</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="update" class="section">
+      <h2>Update Item Status</h2>
+      <p class="lead">Use this form to move a report to its next stage. Fields marked <span class="req">*</span> are required.</p>
+
+      <div id="update-success" class="alert alert-success" role="status">
+        <strong>Status updated successfully!</strong> The item progress has been changed.
+      </div>
+
+      <form class="form card" action="#update-success" method="get">
+        <div class="form-grid">
+
+          <div class="field">
+            <label for="item-id">Item ID <span class="req">*</span></label>
+            <input class="control" id="item-id" name="item_id" type="text" pattern="LF-[0-9]{4}" title="Use the format LF-1001" required placeholder="LF-1001">
+            <small class="hint">Format: LF-1001</small>
+            <small class="error">Enter the Item ID in the format LF-1001.</small>
+          </div>
+
+          <div class="field">
+            <label for="new-status">New status <span class="req">*</span></label>
+            <select class="control" id="new-status" name="new_status" required>
+              <option value="">Select a status</option>
+              <option>Under Review</option>
+              <option>Matched</option>
+              <option>Returned</option>
+            </select>
+            <small class="error">Please select the new status.</small>
+          </div>
+
+          <div class="field">
+            <label for="updated-by">Updated by <span class="req">*</span></label>
+            <input class="control" id="updated-by" name="updated_by" type="text" pattern="[A-Za-z ]{3,50}" title="Use 3 to 50 letters and spaces only" required placeholder="Staff member name">
+            <small class="error">Enter a valid name (3 to 50 letters, no numbers).</small>
+          </div>
+
+          <div class="field">
+            <label for="update-email">Contact email <span class="req">*</span></label>
+            <input class="control" id="update-email" name="update_email" type="email" required placeholder="name@college.edu">
+            <small class="error">Please enter a valid email address.</small>
+          </div>
+
+          <div class="field full">
+            <label for="remarks">Remarks <span class="req">*</span></label>
+            <textarea class="control" id="remarks" name="remarks" rows="3" minlength="10" maxlength="200" required placeholder="e.g. Owner verified the ID and collected the item"></textarea>
+            <small class="hint">10 to 200 characters.</small>
+            <small class="error">Please add remarks of at least 10 characters.</small>
+          </div>
+
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn">Update Status</button>
+          <button type="reset" class="btn btn-secondary">Clear Form</button>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Campus Lost &amp; Found Recovery Portal &middot; College CA Project</p>
+      <p class="footer-note">Frontend prototype built with HTML and CSS only. Data is not stored yet.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script> 
+
+</body>
+</html>
